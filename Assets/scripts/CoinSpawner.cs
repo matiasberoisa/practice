@@ -6,6 +6,7 @@ public class CoinSpawner : MonoBehaviour
 {
     float timer;
     public GameObject coinPrefab;
+    
     void Update(){
         timer += Time.deltaTime;
 
