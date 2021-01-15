@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour {
     }
     void update()
     {
-        if(scoreText == null);
+        if(scoreText == null)
         {
             scoreText = GameObject.Find("Text").GetComponent<Text>();
             scoreText.text = score + "";
