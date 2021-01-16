@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour {
 
     void Start()
     {
-        if(scoreManager = null)
+        if(scoreManager == null)
         {
             scoreManager = this;
             DontDestroyOnLoad(this);
@@ -22,24 +22,23 @@ public class ScoreManager : MonoBehaviour {
         {
             Destroy(this);
         }
-    }
-    void update()
-    {
-        if(scoreText == null)
-        {
-            scoreText = GameObject.Find("Text").GetComponent<Text>();
-            scoreText.text = score + "";
-        }
-    }
 
-    public void RaiseScore(int s)
+    void Update()
     {
-        score += s;
+        scoreText = GameObject.Find("text").GetComponent<Text>();
         scoreText.text = score + "";
-
-        if(score == 3)
+    }
+    
+    public void RaiseScore(int s)
         {
+            score += s;
+            scoreText.text = score + "";
+
+            if(score == 3)
+            {
             SceneManager.LoadScene("Scene2");
+            }
         }
     }
 }
+
